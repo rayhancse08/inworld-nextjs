@@ -1,0 +1,93 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #2d3e50;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f88f25; /* A bright accent color */
+    letter-spacing: 1px;
+}
+
+.searchBar {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 25px;
+    padding: 5px 15px;
+    width: 400px;
+    box-shadow: 0 2px 5px #f88f25;;
+}
+
+.searchBar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    font-size: 16px;
+    color: #f88f25;;
+    padding: 8px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.searchBar input::placeholder {
+    color: #888;
+}
+
+.searchBar input:focus {
+    border: 1px solid #f88f25;;
+}
+
+.searchIcon {
+    color: #f88f25;;
+    font-size: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.authButtons {
+    display: flex;
+    gap: 15px;
+}
+
+.login, .signup {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login {
+    background-color: transparent;
+    color: #f88f25;;
+    border: 2px solid #f88f25;;
+}
+
+.login:hover {
+    background-color: #e14b7e;
+}
+
+.signup {
+    background-color: transparent;
+    color: #f88f25;;
+    border: 2px solid #f88f25;;
+}
+
+.signup:hover {
+    background-color: #ff5c8d;
+    color: white;
+}
+
+.signup:focus, .login:focus {
+    outline: none;
+}
