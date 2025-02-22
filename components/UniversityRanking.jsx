@@ -1,23 +1,33 @@
 import styles from "./UniversityRanking.module.css";
-import Link from "next/link";
-
-const universities = [
-    { id: 1, worldRank: 1, countryRank: 1, name: "Massachusetts Institute of Technology", city: "Cambridge", country: "United States" },
-    { id: 2, worldRank: 2, countryRank: 2, name: "Harvard University", city: "Cambridge", country: "United States" },
-    { id: 3, worldRank: 3, countryRank: 1, name: "University of Oxford", city: "Oxford", country: "United Kingdom" },
-    { id: 4, worldRank: 5, countryRank: 2, name: "University of Cambridge", city: "Cambridge", country: "United Kingdom" },
-    { id: 5, worldRank: 6, countryRank: 3, name: "Imperial College London", city: "London", country: "United Kingdom" }
-];
+import { useEffect, useState } from "react";
 
 export default function UniversityRanking() {
+    const [universities, setUniversities] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const pageSize = 100; // Adjust the number of items per page
+
+    useEffect(() => {
+        fetch(`https://inworldstudentcampus.com/api/universities/?page=${currentPage}&page_size=${pageSize}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setUniversities(data.results);
+                setTotalPages(Math.ceil(data.count / pageSize)); // Calculate total pages
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching universities:", error);
+                setLoading(false);
+            });
+    }, [currentPage]); // Re-fetch data when currentPage changes
+
+    if (loading) {
+        return <div className={styles.loader}>Loading universities...</div>;
+    }
+
     return (
         <div className={styles.container}>
-            {/*<ul className={styles.menu}>*/}
-            {/*    <li className={styles.menuItem} onClick={() => window.location.href = '/ranking'}>*/}
-            {/*        <span className={styles.icon}>🏆</span>*/}
-            {/*        <strong className={styles.menuText}>World University Ranking List</strong>*/}
-            {/*    </li>*/}
-            {/*</ul>*/}
             <div className={styles.filterSection}>
                 <label className={styles.label}>
                     Country
@@ -38,6 +48,7 @@ export default function UniversityRanking() {
                 </div>
                 <button className={styles.filterButton}>🔍 Filter</button>
             </div>
+
             <div className={styles.tableContainer}>
                 <h2 className={styles.heading}>🌍 World University Ranking List</h2>
                 <table className={styles.table}>
@@ -51,20 +62,47 @@ export default function UniversityRanking() {
                     </tr>
                     </thead>
                     <tbody>
-                    {universities.map((uni) => (
-                        <tr key={uni.id} className={styles.tableRow}>
-                            <td>{uni.id}</td>
+                    {universities.map((uni, index) => (
+                        <tr key={uni.slug} className={styles.tableRow}>
+                            <td>{(currentPage - 1) * pageSize + index + 1}</td>
+                            {/* Global sequence number */}
                             <td>
-                                <span className={styles.badgeWorld}>🌍 World: {uni.worldRank}</span>{" "}
-                                <span className={styles.badgeCountry}>🏛️ Country: {uni.countryRank}</span>
+                                <span className={styles.badgeWorld}>🌍 World: {uni.world_ranking}</span>{" "}
+                                <span className={styles.badgeCountry}>🏛️ Country: {uni.country_ranking}</span>
                             </td>
-                            <td className={styles.universityName}>{uni.name}</td>
+                            <td
+                                className={styles.universityName}
+                                onClick={() => window.location.href = `/universities/${uni.slug}`}
+                            >
+                                {uni.name}
+                            </td>
                             <td>{uni.city}</td>
                             <td>{uni.country}</td>
                         </tr>
                     ))}
                     </tbody>
                 </table>
+            </div>
+
+            {/* Pagination Controls */}
+            <div className={styles.pagination}>
+                <button
+                    className={styles.paginationButton}
+                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                    disabled={currentPage === 1}
+                >
+                    ⬅️ Previous
+                </button>
+                <span className={styles.pageInfo}>
+                    Page {currentPage} of {totalPages}
+                </span>
+                <button
+                    className={styles.paginationButton}
+                    onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                    disabled={currentPage === totalPages}
+                >
+                    Next ➡️
+                </button>
             </div>
         </div>
     );

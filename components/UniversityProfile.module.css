@@ -1,0 +1,194 @@
+/* Profile Container */
+.profileContainer {
+    width: 100%;
+    max-width: 1020px;
+    margin: 20px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    /*background: linear-gradient(135deg, #79bb24, #2aa78c);*/
+    padding: 20px;
+    border-radius: 12px 12px 0 0;
+    position: relative;
+}
+
+.universityLogo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-right: 15px;
+}
+
+.universityName {
+    flex: 1;
+    /*color: white;*/
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.favoriteButton {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Contact Information */
+.infoBox {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    line-height: 1.6;
+}
+
+.contactInfo {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* Social Icons */
+.socialIcons {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.icon {
+    font-size: 24px;
+    color: #2aa78c;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    color: #1f7d68;
+}
+
+/* Tabs Navigation */
+.navTabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 0;
+}
+
+.tabButton {
+    background: none;
+    border: 2px solid transparent;
+    /*color: #2aa78c;*/
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.tabButton:hover {
+    background: rgba(42, 167, 140, 0.2);
+    border: 2px solid #2aa78c;
+}
+
+.activeTab {
+    background: #2aa78c;
+    color: white !important;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 2px solid #2aa78c;
+}
+
+/* Tab Content */
+/* Description Wrapper */
+.description {
+    font-size: 16px;
+    color: #333;
+    padding: 15px;
+    line-height: 1.8;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Ensure HTML elements are displayed correctly */
+.contentWrapper h1,
+.contentWrapper h2,
+.contentWrapper h3 {
+    font-weight: bold;
+    /*color: #2aa78c;*/
+    margin-bottom: 12px;
+}
+
+.contentWrapper p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* Style links properly */
+.contentWrapper a {
+    color: #2aa78c;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contentWrapper a:hover {
+    color: #1f7d68;
+}
+
+/* Lists */
+.contentWrapper ul,
+.contentWrapper ol {
+    margin-left: 20px;
+    padding-left: 15px;
+}
+
+.contentWrapper ul li,
+.contentWrapper ol li {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+/* Make images inside the content responsive */
+.contentWrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .profileContainer {
+        width: 95%;
+    }
+
+    .navTabs {
+        flex-wrap: wrap;
+    }
+
+    .tabButton {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .universityName {
+        font-size: 18px;
+    }
+}

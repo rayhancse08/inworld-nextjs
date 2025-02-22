@@ -133,7 +133,7 @@
 }
 
 .badgeWorld {
-    background-color: orange;
+    background-color: #f88f25;
     padding: 5px 10px;
     border-radius: 5px;
     color: white;
@@ -152,5 +152,52 @@
 }
 
 .universityName {
+    color: #2aa78c; /* Match your theme color */
     font-weight: bold;
+    cursor: pointer; /* Show pointer on hover */
+    text-decoration: underline;
+    transition: color 0.3s ease-in-out;
 }
+
+.universityName:hover {
+    color: #1f7d68; /* Darker color on hover */
+    text-decoration: underline;
+}
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.paginationButton {
+    background-color: #f88f25; /* Primary green color */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.paginationButton:hover {
+    background-color: #35ac9c; /* Darker green on hover */
+}
+
+.paginationButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+

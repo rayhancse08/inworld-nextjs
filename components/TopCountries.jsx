@@ -1,44 +1,62 @@
 import styles from "./TopCountries.module.css";
-
-const countries = [
-    { rank: 1, name: "United States", flag: "🇺🇸" },
-    { rank: 2, name: "United Kingdom", flag: "🇬🇧" },
-    { rank: 3, name: "Canada", flag: "🇨🇦" },
-    { rank: 4, name: "Australia", flag: "🇦🇺" },
-    { rank: 5, name: "Germany", flag: "🇩🇪" },
-    { rank: 6, name: "France", flag: "🇫🇷" },
-    { rank: 7, name: "Japan", flag: "🇯🇵" },
-];
+import { useEffect, useState } from "react";
 
 export default function TopCountries() {
+    const [countries, setCountries] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetch("https://inworldstudentcampus.com/api/countries/")
+            .then((response) => response.json())
+            .then((data) => {
+                setCountries(data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching universities:", error);
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) {
+        return <div className={styles.loader}>Loading countries...</div>;
+    }
+
     return (
         <div className={styles.container}>
             {/* Filter Section */}
             <div className={styles.filterSection}>
                 <label className={styles.label}>
                     Country
-                    <input type="text" className={styles.input} placeholder="Enter country" />
+                    <input type="text" className={styles.input} placeholder="Search country..." />
                 </label>
-                <button className={styles.filterButton}>🔍 Filter</button>
+                <button className={styles.filterButton}>🔍 Search</button>
             </div>
 
             {/* Table Section */}
             <div className={styles.tableContainer}>
-                <h2 className={styles.heading}>🌍 World Top Country Universities</h2>
+                <h2 className={styles.heading}>🌍 Top Countries with the Best Universities</h2>
                 <table className={styles.table}>
                     <thead>
                     <tr>
                         <th>Rank</th>
-                        <th>Flag</th>
-                        <th>Country Name</th>
+                        <th>Country</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {countries.map((country) => (
-                        <tr key={country.rank} className={styles.row}>
-                            <td><span className={styles.rankBadge}>#{country.rank}</span></td>
-                            <td className={styles.flag}>{country.flag}</td>
-                            <td className={styles.countryName}>{country.name}</td>
+                    {countries.map((country, index) => (
+                        <tr key={index} className={styles.row}>
+                            <td>
+                                <span className={styles.rankBadge}>#{index + 1}</span>
+                            </td>
+                            <td className={styles.countryName}>
+                                <img
+                                    src={country.flag}
+                                    alt={country.name}
+                                    className={styles.flag}
+                                />
+                                {country.name}
+                            </td>
                         </tr>
                     ))}
                     </tbody>

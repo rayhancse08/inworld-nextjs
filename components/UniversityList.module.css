@@ -24,6 +24,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
+    /*background: #35ac9c;*/
 }
 
 .flag {
@@ -34,6 +35,7 @@
 .title {
     font-size: 1.5rem;
     font-weight: bold;
+
 }
 
 .table {
@@ -46,7 +48,10 @@
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+
 }
+
+
 
 .universityRow {  /* ✅ New row layout for logo & name */
     display: flex;
@@ -66,4 +71,18 @@
     font-weight: bold;
     color: #555;
     margin-top: 50px;
+}
+
+
+.universityName {
+    color: #2aa78c; /* Match your theme color */
+    font-weight: bold;
+    cursor: pointer; /* Show pointer on hover */
+    text-decoration: underline;
+    transition: color 0.3s ease-in-out;
+}
+
+.universityName:hover {
+    color: #1f7d68; /* Darker color on hover */
+    text-decoration: underline;
 }

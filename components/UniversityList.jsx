@@ -46,7 +46,7 @@ export default function UniversityList() {
                                             alt={university.name}
                                             className={styles.logo}
                                         />
-                                        <span>{university.name}</span>
+                                        <span className={styles.universityName} onClick={() => window.location.href = `/universities/${university.slug}`}>{university.name}</span>
                                     </div>
                                 </td>
                             </tr>

@@ -13,10 +13,10 @@ export default function Sidebar() {
 
             {/* Menu List */}
             <ul className={styles.menuList}>
-                <li className={styles.menuItem}>🏠 <strong>Home</strong></li>
+                <li className={styles.menuItem} onClick={() => window.location.href = '/'}>🏠 <strong>Home</strong></li>
                 <li className={styles.menuItem} onClick={() => window.location.href = '/ranking'}>🏆 <strong>World University Ranking List</strong></li>
                 <li className={styles.menuItem} onClick={() => window.location.href = '/countries'}>🌍 <strong>World Top Country Universities</strong></li>
-                <li className={styles.menuItem}>❓ <strong>Q & A</strong></li>
+                <li className={styles.menuItem} onClick={() => window.location.href = '/question_and_answer'}>❓ <strong>Q & A</strong></li>
                 <li className={styles.menuItem}>📖 <strong>Comprehensive Guide</strong></li>
 
                 {/* Dropdown for "How to Write" */}
