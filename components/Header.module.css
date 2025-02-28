@@ -91,3 +91,43 @@
 .signup:focus, .login:focus {
     outline: none;
 }
+
+
+.searchResults {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    width: 260px;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 5px;
+    /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);*/
+    z-index: 10;
+    padding: 10px;
+}
+
+.resultItem {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.resultItem a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+.resultItem:hover {
+    background: #f1f1f1;
+}
+
+
+.loadingText,
+.noResults {
+    text-align: center;
+    padding: 10px;
+    color: #777;
+}

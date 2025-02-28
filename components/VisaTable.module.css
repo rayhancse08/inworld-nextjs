@@ -1,0 +1,74 @@
+/* VisaTable.module.css */
+
+/* Container */
+.container {
+    width: 1020px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #35ac9c;
+    text-align: left;
+}
+
+.table th {
+    background: #35ac9c;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.table td {
+    font-size: 1rem;
+    color: #333;
+}
+
+.table tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* Link Styling */
+.applyLink {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background: #35ac9c;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.applyLink:hover {
+    background: #45a049;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    color: #555;
+}

@@ -1,0 +1,49 @@
+/* ScholarshipUpdates.module.css */
+
+/* Container */
+.container {
+    width: 1020px;
+    margin: 20px auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* Notice Card */
+.noticeCard {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.noticeCard:hover {
+    transform: translateY(-3px);
+}
+
+/* Notice Header */
+.noticeHeader {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+/* Notice Content */
+.noticeContent {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}

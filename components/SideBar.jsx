@@ -16,8 +16,8 @@ export default function Sidebar() {
                 <li className={styles.menuItem} onClick={() => window.location.href = '/'}>🏠 <strong>Home</strong></li>
                 <li className={styles.menuItem} onClick={() => window.location.href = '/ranking'}>🏆 <strong>World University Ranking List</strong></li>
                 <li className={styles.menuItem} onClick={() => window.location.href = '/countries'}>🌍 <strong>World Top Country Universities</strong></li>
-                <li className={styles.menuItem} onClick={() => window.location.href = '/question_and_answer'}>❓ <strong>Q & A</strong></li>
-                <li className={styles.menuItem}>📖 <strong>Comprehensive Guide</strong></li>
+                <li className={styles.menuItem} onClick={() => window.location.href = '/faq'}>❓ <strong>Q & A</strong></li>
+                <li className={styles.menuItem} onClick={() => window.location.href = '/guide'}>📖 <strong>Comprehensive Guide</strong></li>
 
                 {/* Dropdown for "How to Write" */}
                 <li className={styles.dropdown} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
@@ -25,18 +25,23 @@ export default function Sidebar() {
                 </li>
                 {isDropdownOpen && (
                     <ul className={styles.submenu}>
-                        <li className={styles.submenuItem}>📄 Personal Statement</li>
-                        <li className={styles.submenuItem}>💡 Purpose of Study</li>
-                        <li className={styles.submenuItem}>👤 Resume</li>
-                        <li className={styles.submenuItem}>📋 How to Write Research Plan</li>
-                        <li className={styles.submenuItem}>✉️ Reference Letter</li>
+                        <li
+                            className={styles.submenuItem}
+                            onClick={() => window.open('/pdfs/Personal_statement_Demo.pdf', '_blank')}
+                        >
+                            📄 Personal Statement
+                        </li>
+                        <li className={styles.submenuItem} onClick={() => window.open('/pdfs/Purpose_of_study.pdf', '_blank')}>💡 Purpose of Study</li>
+                        <li className={styles.submenuItem} onClick={() => window.open('/pdfs/Resume.pdf', '_blank')}>👤 Resume</li>
+                        <li className={styles.submenuItem} onClick={() => window.open('/pdfs/HOW_TO_WRITE_RESEARCH_PLAN.pdf', '_blank')}>📋 How to Write Research Plan</li>
+                        <li className={styles.submenuItem} onClick={() => window.open('/pdfs/RecommendationLetter.pdf', '_blank')}>✉️ Reference Letter</li>
                     </ul>
                 )}
 
-                <li className={styles.menuItem}>🌎 <strong>Countries Visa Application Link</strong></li>
-                <li className={styles.menuItem}>⚠️ <strong>Scholarship Update</strong></li>
-                <li className={styles.menuItem}>ℹ️ <strong>About Us</strong></li>
-                <li className={styles.menuItem}>📩 <strong>Contact Us</strong></li>
+                <li className={styles.menuItem} onClick={() => window.location.href = '/visaApplication'}>🌎 <strong>Countries Visa Application Link</strong></li>
+                <li className={styles.menuItem} onClick={() => window.location.href = '/scholarshipUpdate'}>⚠️ <strong>Scholarship Update</strong></li>
+                <li className={styles.menuItem} onClick={() => window.location.href = '/about'}>ℹ️ <strong>About Us</strong></li>
+                <li className={styles.menuItem} onClick={() => window.location.href = '/contact'}>📩 <strong>Contact Us</strong></li>
             </ul>
         </aside>
     );

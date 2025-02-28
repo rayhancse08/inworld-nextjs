@@ -101,14 +101,29 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Container to Align Flag and Text */
 .heading {
-    /*background-color: #79bb24;*/
-    /*color: white;*/
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between flag and text */
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
     text-align: center;
-    border-radius: 5px;
-    font-size: 25px;
+    justify-content: center;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
 }
+
+/* Flag Styling */
+.flag {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    object-fit: contain;
+}
+
 
 .table {
     width: 100%;
@@ -151,6 +166,7 @@
     display: inline-block;
 }
 
+/* University Name & Logo - Align in the Same Line */
 .universityContainer {
     display: flex;
     align-items: center;
@@ -166,7 +182,7 @@
 }
 
 .universityName {
-    color: #2aa78c; /* Theme color */
+    color: #35ac9c; /* Theme color */
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
@@ -177,6 +193,7 @@
     color: #1f7d68; /* Darker color on hover */
     text-decoration: underline;
 }
+
 
 
 

@@ -1,6 +1,6 @@
 import styles from "./TopCountries.module.css";
 import { useEffect, useState } from "react";
-
+import Link from "next/link";
 export default function TopCountries() {
     const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -55,7 +55,9 @@ export default function TopCountries() {
                                     alt={country.name}
                                     className={styles.flag}
                                 />
-                                {country.name}
+                                <Link href={`/countries/${country.slug}`} className={styles.countryLink}>
+                                    {country.name}
+                                </Link>
                             </td>
                         </tr>
                     ))}

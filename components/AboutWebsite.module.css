@@ -1,0 +1,68 @@
+/* AboutWebsite.module.css */
+
+/* Container */
+.container {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+.section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.section:hover {
+    transform: translateY(-3px);
+}
+
+/* Title */
+.sectionHeader {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    /*border-bottom: 2px solid #4CAF50;*/
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+.sectionContent {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Ordered List */
+.sectionContent ol {
+    padding-left: 20px;
+}
+
+.sectionContent li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/*.sectionContent li strong {*/
+/*    color: #4CAF50;*/
+/*}*/
+
+/* Final Paragraph */
+.finalNote {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #333;
+}

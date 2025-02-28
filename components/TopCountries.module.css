@@ -128,3 +128,22 @@
     color: #666;
     padding: 20px;
 }
+
+
+.countryLink {
+    text-decoration: none;
+    color: #35ac9c;
+    font-weight: bold;
+}
+
+.countryLink:hover {
+    text-decoration: underline;
+}
+
+
+
+.noData {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}
