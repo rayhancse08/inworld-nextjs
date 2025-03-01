@@ -1,0 +1,63 @@
+/* 📌 Main Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* 📌 Section Container */
+.contentContainer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.contentContainer:hover {
+    transform: scale(1.02);
+}
+
+/* 📌 Headings */
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* 📌 Paragraph */
+.content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* 📌 List */
+.list {
+    padding-left: 20px;
+}
+
+.list li {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* 📌 Links */
+.content a {
+    color: #2aa78c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}

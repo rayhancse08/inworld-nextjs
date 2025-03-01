@@ -27,7 +27,7 @@
     background-color: #f8f9fa;
 }
 
-/* 📌 Content Wrapper (For Margin) */
+/* 📌 Content Wrapper (For Padding) */
 .contentWrapper {
     flex: 1;
     padding: 20px;

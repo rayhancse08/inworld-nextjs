@@ -25,13 +25,13 @@ export default function TopCountries() {
     return (
         <div className={styles.container}>
             {/* Filter Section */}
-            <div className={styles.filterSection}>
-                <label className={styles.label}>
-                    Country
-                    <input type="text" className={styles.input} placeholder="Search country..." />
-                </label>
-                <button className={styles.filterButton}>🔍 Search</button>
-            </div>
+            {/*<div className={styles.filterSection}>*/}
+            {/*    <label className={styles.label}>*/}
+            {/*        Country*/}
+            {/*        <input type="text" className={styles.input} placeholder="Search country..." />*/}
+            {/*    </label>*/}
+            {/*    <button className={styles.filterButton}>🔍 Search</button>*/}
+            {/*</div>*/}
 
             {/* Table Section */}
             <div className={styles.tableContainer}>

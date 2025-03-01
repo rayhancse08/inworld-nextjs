@@ -1,133 +1,170 @@
+/* 📌 Header Container */
 .header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #2d3e50;
-    color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    /*background-color: #79bb24;*/
+    padding: 12px 20px;
+    /*color: white;*/
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-.logo {
-    font-size: 24px;
+/* 📌 Logo */
+.logo a {
+    font-size: 20px;
     font-weight: bold;
-    color: #f88f25; /* A bright accent color */
-    letter-spacing: 1px;
+    /*color: white;*/
+    text-decoration: none;
+    margin-left: 20px;
 }
 
-.searchBar {
-    display: flex;
-    align-items: center;
-    background-color: #f1f1f1;
-    border-radius: 25px;
-    padding: 5px 15px;
-    width: 400px;
-    box-shadow: 0 2px 5px #f88f25;;
-}
-
-.searchBar input {
+/* 📌 Mobile Menu Toggle */
+.menuToggle {
+    display: none;
+    background: none;
     border: none;
-    outline: none;
-    background: transparent;
-    flex: 1;
-    font-size: 16px;
-    color: #f88f25;;
-    padding: 5px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-}
-
-.searchBar input::placeholder {
-    color: #888;
-}
-
-.searchBar input:focus {
-    border: 1px solid #f88f25;;
-}
-
-.searchIcon {
-    color: #f88f25;;
-    font-size: 18px;
-    margin-left: 10px;
+    color: white;
+    font-size: 24px;
     cursor: pointer;
 }
 
-.authButtons {
+/* 📌 Navigation Menu */
+.navMenu {
     display: flex;
     gap: 15px;
 }
 
-.login, .signup {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.login {
-    background-color: transparent;
-    color: #f88f25;;
-    border: 2px solid #f88f25;;
-}
-
-.login:hover {
-    background-color: #e14b7e;
-}
-
-.signup {
-    background-color: transparent;
-    color: #f88f25;;
-    border: 2px solid #f88f25;;
-}
-
-.signup:hover {
-    background-color: #ff5c8d;
+.navMenu a {
     color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-.signup:focus, .login:focus {
+.navMenu a:hover {
+    color: #f88f25;
+}
+
+/* 📌 Search Bar */
+.searchContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    width: 420px;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
     outline: none;
+    font-size: 14px;
 }
 
+.searchIcon {
+    position: absolute;
+    right: 10px;
+    color: #333;
+}
 
+/* 📌 Search Results */
 .searchResults {
     position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 100%;
+    left: 0;
+    width: 100%;
     background: white;
-    width: 260px;
-    max-height: 250px;
-    overflow-y: auto;
     border-radius: 5px;
-    /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);*/
-    z-index: 10;
-    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .resultItem {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
     cursor: pointer;
-}
-
-.resultItem a {
-    text-decoration: none;
-    color: black;
-    font-size: 1rem;
+    font-size: 14px;
+    transition: background 0.2s;
 }
 
 .resultItem:hover {
     background: #f1f1f1;
 }
 
+/* 📌 Blinking Link Animation */
+.blinkingLink {
+    animation: blink 1s infinite alternate;
+}
 
-.loadingText,
-.noResults {
-    text-align: center;
-    padding: 10px;
-    color: #777;
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
+
+/* 📌 Auth Buttons */
+.authButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.login, .signup {
+    background: white;
+    color: #79bb24;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login:hover, .signup:hover {
+    background: #f88f25;
+    color: white;
+}
+
+/* 📌 Mobile Responsiveness */
+@media (max-width: 768px) {
+    .menuToggle {
+        display: block;
+    }
+
+    .navMenu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: white;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navMenu.open {
+        display: flex;
+    }
+
+    .navMenu a {
+        color: black;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .searchContainer {
+        width: 100%;
+    }
+
+    .searchInput {
+        width: 100%;
+    }
+
+    .authButtons {
+        display: none;
+    }
 }

@@ -1,0 +1,48 @@
+/* 🌍 Privacy Policy Container */
+.container {
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+/* 📌 Heading */
+.heading {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 📌 Policy Content */
+.policyContent {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* 📌 Policy Sections */
+.policySection {
+    margin-top: 20px;
+}
+
+.policySection h3 {
+    font-size: 20px;
+    font-weight: bold;
+    /*color: #2aa78c;*/
+    margin-bottom: 10px;
+}
+
+.policySection ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.policySection p {
+    font-size: 16px;
+    color: #333;
+}

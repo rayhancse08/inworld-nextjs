@@ -1,0 +1,64 @@
+/* 🌍 Footer Container */
+.footer {
+    background: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    border-top: 2px solid #ddd;
+}
+
+/* 📌 Social Media Icons */
+.socialMedia {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.icon {
+    font-size: 20px;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+.icon:hover {
+    color: #f88f25; /* Hover color */
+}
+
+/* 📌 Navigation Links */
+.navLinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.navLinks a:hover {
+    color: #f88f25;
+}
+
+/* 📌 Footer Bottom */
+.footerBottom {
+    font-size: 14px;
+    color: #777;
+}
+
+.footerBottom a {
+    text-decoration: none;
+    color: #35ac9c;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.footerBottom a:hover {
+    color: #1f7d68;
+}
