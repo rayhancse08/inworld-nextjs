@@ -28,7 +28,7 @@ export default function UniversityList() {
                 <div key={index} className={styles.card}>
                     <div className={styles.header}>
                         <img src={country.flag} alt={country.name} className={styles.flag} />
-                        <h2 className={styles.title}>{country.name} Top Universities</h2>
+                        <h2 className={styles.title}>{country.name}</h2>
                     </div>
                     <table className={styles.table}>
                         {/*<thead>*/}

@@ -43,7 +43,7 @@ export default function AuthNavbar() {
         localStorage.removeItem("token");
         setIsAuthenticated(false);
         setUsername("");
-        router.push("/login");
+        router.push("/");
     };
     console.log(username)
 

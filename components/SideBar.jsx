@@ -9,7 +9,7 @@ export default function Sidebar() {
         <>
             {/* Sidebar Toggle Button for Mobile */}
             <button className={styles.toggleButton} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                {isSidebarOpen ? "✖ Close" : "☰ Menu"}
+                {isSidebarOpen ? "✖ Close" : "☰"}
             </button>
 
             {/* Sidebar Section */}

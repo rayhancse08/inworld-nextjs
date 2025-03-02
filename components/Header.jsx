@@ -42,17 +42,9 @@ export default function Header() {
             </button>
 
             {/* Logo */}
-            <div className={styles.logo}>
-                <Link href="/">In World Student Campus</Link>
-            </div>
 
-            {/* Navigation (Mobile + Desktop) */}
-            {/*<nav className={`${styles.navMenu} ${menuOpen ? styles.open : ""}`}>*/}
-            {/*    <Link href="/ranking">🏆 Rankings</Link>*/}
-            {/*    <Link href="/countries">🌍 Top Countries</Link>*/}
-            {/*    <Link href="/faq">❓ FAQ</Link>*/}
-            {/*    <Link href="/guide">📖 Guide</Link>*/}
-            {/*</nav>*/}
+
+
 
             {/* Search Bar */}
             <div className={styles.searchContainer}>
