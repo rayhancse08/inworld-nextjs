@@ -1,0 +1,143 @@
+/* Container styling */
+.container {
+    max-width: 1020px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Card styling */
+.card {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    /*background: #62438C;*/
+    /*color: white;*/
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* Table responsiveness */
+.table-container {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.table th {
+    background: #f8f8f8;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+}
+
+.badge-green {
+    background: green;
+}
+
+.badge-blue {
+    background: blue;
+}
+
+/* University Name & Logo */
+.university-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.university-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.link {
+    color: #2aa78c;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+.favActive {
+    color: #f8c102;
+    font-size: 24px;
+}
+
+.favInactive {
+    color: #ccc;
+    font-size: 24px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .card {
+        padding: 15px;
+    }
+
+    .header {
+        font-size: 16px;
+    }
+
+    .table th, .table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .university-logo {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+    }
+
+    /* Make table scrollable */
+    .table-container {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .table th, .table td {
+        font-size: 11px;
+        padding: 6px;
+    }
+
+    .university-logo {
+        width: 25px;
+        height: 25px;
+        margin-right: 3px;
+    }
+}

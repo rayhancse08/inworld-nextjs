@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./UniversityProfile.module.css";
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaStar } from "react-icons/fa";
@@ -9,9 +9,63 @@ import DOMPurify from "isomorphic-dompurify"; // Ensure safe HTML rendering
 export default function UniversityProfile({ university }) {
     const [isFavorite, setIsFavorite] = useState(false);
     const [activeTab, setActiveTab] = useState("Tuition Fees");
+    const universityId = university?.id
+    console.log(isFavorite)
 
-    const handleFavorite = () => {
-        setIsFavorite(!isFavorite);
+    useEffect(() => {
+        checkFavoriteStatus(); // Check favorite status on mount
+    }, [universityId]);
+
+    // ✅ Check if university is already in favorites
+    const checkFavoriteStatus = async () => {
+        const token = localStorage.getItem("token");
+        if (!token) return;
+
+        try {
+            const response = await fetch(`https://inworldstudentcampus.com/api/university/${universityId}/is-favorite/`, {
+                headers: {
+                    "Authorization": `Token ${token}`,
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data);
+                setIsFavorite(data.is_favorite);
+            }
+        } catch (error) {
+            console.error("Error checking favorite status:", error);
+        }
+    };
+
+    // ✅ Handle favorite toggle
+    const handleFavorite = async () => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("Please log in to favorite this university.");
+            return;
+        }
+
+        try {
+            const response = await fetch(`https://inworldstudentcampus.com/api/university/${university.id}/toggle-favorite/`, {
+                method: "POST",
+                headers: {
+                    "Authorization": `Token ${token}`,
+                    "Content-Type": "application/json",
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log(data)
+                setIsFavorite(data.is_favorite);
+            } else {
+                console.error("Failed to toggle favorite");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
     };
 
     // Tab content mapping
@@ -47,7 +101,7 @@ export default function UniversityProfile({ university }) {
                     <h1 className={styles.universityName}>{university?.name}</h1>
                 </div>
                 <button className={styles.favoriteButton} onClick={handleFavorite}>
-                    <FaStar className={isFavorite ? "text-yellow-500" : "text-gray-400"} />
+                    <FaStar className={isFavorite ? styles.favActive : styles.favInactive} />
                 </button>
             </div>
 

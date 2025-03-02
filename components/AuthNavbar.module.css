@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile {
+    font-size: 16px;
+    text-decoration: none;
+    color: #f88f25;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.profile i {
+    color: #f88f25;
+    margin-right: 5px;
+}
+
+.logout {
+    border-radius: 20px;
+    border: 1px solid #fb8414;
+    color: #fb8414;
+    background: transparent;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    background: #fb8414;
+    color: white;
+}
+
+.authButton {
+    border-radius: 20px;
+    border: 1px solid #fb8414;
+    color: #fb8414;
+    background: transparent;
+    padding: 6px 12px;
+    text-decoration: none;
+    margin-right: 8px;
+    transition: 0.3s;
+}
+
+.authButton:hover {
+    background: #fb8414;
+    color: white;
+}

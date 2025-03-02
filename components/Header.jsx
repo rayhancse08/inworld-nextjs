@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
+import AuthNavbar from "./AuthNavbar";
 
 export default function Header() {
     const [query, setQuery] = useState(""); // Stores user input
@@ -92,8 +93,9 @@ export default function Header() {
 
             {/* Auth Buttons (Login/Signup) */}
             <div className={styles.authButtons}>
-                <button className={styles.login}>Login</button>
-                <button className={styles.signup}>Signup</button>
+                <AuthNavbar />
+                {/*<button className={styles.login} onClick={() => window.location.href = '/login'}>Login</button>*/}
+                {/*<button className={styles.signup} onClick={() => window.location.href = '/signup'}>Signup</button>*/}
             </div>
         </header>
     );
