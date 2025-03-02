@@ -1,157 +1,104 @@
+/* 🌍 Container */
 .container {
+    max-width: 1020px;
+    margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    border-radius: 10px;
+    background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
 }
 
-/* Menu Section */
-.menu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menuItem {
+/* 🌍 Country Header */
+.heading {
     display: flex;
     align-items: center;
-    background: #79bb24;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.menuItem:hover {
-    background: #68a31f;
-}
-
-.icon {
+    gap: 12px;
     font-size: 22px;
-    margin-right: 10px;
-}
-
-.menuText {
     font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-/* Filter Section */
-.filterSection {
-    display: flex;
-    gap: 15px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    align-items: center;
+/* 🌍 Country Flag */
+.flag {
+    width: 32px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 🌍 Table Wrapper */
+.tableContainer {
+    overflow-x: auto; /* Enables scrolling on small screens */
     background: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.label {
+/* 🌍 Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f3f4f6;
     font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
 }
 
-.input {
-    margin-top: 5px;
-    padding: 8px;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* 🌍 University Row */
+.tableRow:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.scholarshipSection {
+/* 🌍 University Logo + Name */
+.universityContainer {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.radioLabel {
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.filterButton {
-    background-color:#f88f25 ;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background 0.3s ease;
-}
-
-.filterButton:hover {
-    background-color: #68a31f;
-}
-
-/* Table Section */
-.tableContainer {
-    margin-top: 20px;
-    background: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Header Container to Align Flag and Text */
-.heading {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between flag and text */
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    justify-content: center;
-    background: #f8f9fa;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-/* Flag Styling */
-.flag {
+/* 🌍 University Logo */
+.universityLogo {
     width: 30px;
     height: 30px;
-    border-radius: 4px;
-    object-fit: contain;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.table th, .table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-    font-size: 14px;
-}
-
-.table th {
-    background-color: #f2f2f2;
+/* 🌍 University Name */
+.universityName {
+    color: #2aa78c;
     font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.tableRow:nth-child(even) {
-    background-color: #f9f9f9;
+.universityName:hover {
+    color: #f88f25;
+    text-decoration: underline;
 }
 
+/* 🌍 Rank Badges */
 .badgeWorld {
     background-color: #f88f25;
-    padding: 5px 10px;
-    border-radius: 5px;
     color: white;
+    padding: 5px 5px;
+    border-radius: 5px;
     font-size: 14px;
     display: inline-block;
     margin-right: 5px;
@@ -159,101 +106,68 @@
 
 .badgeCountry {
     background-color: #35ac9c;
-    padding: 5px 10px;
-    border-radius: 5px;
     color: white;
+    padding: 5px 5px;
+    border-radius: 5px;
     font-size: 14px;
     display: inline-block;
 }
 
-/* University Name & Logo - Align in the Same Line */
-.universityContainer {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Spacing between logo and name */
-}
-
-.universityLogo {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    object-fit: cover;
-    border: 1px solid #ddd;
-}
-
-.universityName {
-    color: #35ac9c; /* Theme color */
+/* 🌍 Loader */
+.loader {
+    text-align: center;
+    font-size: 18px;
     font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-.universityName:hover {
-    color: #1f7d68; /* Darker color on hover */
-    text-decoration: underline;
-}
-
-
-
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: #2563eb;
     margin-top: 20px;
-    gap: 10px;
 }
 
-.paginationButton {
-    background-color: #f88f25; /* Primary green color */
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    font-size: 16px;
+/* 🌍 No Data */
+.noData {
+    text-align: center;
+    padding: 15px;
     font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    color: #555;
 }
 
-.paginationButton:hover {
-    background-color: #35ac9c; /* Darker green on hover */
+/* 📌 Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .badgeWorld,
+    .badgeCountry {
+        font-size: 12px;
+        padding: 2px 2px;
+    }
+
+    .universityContainer {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .universityLogo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .universityName {
+        font-size: 14px;
+    }
+
+    .flag {
+        width: 24px;
+        height: 16px;
+    }
+
+    .heading {
+        font-size: 18px;
+    }
 }
-
-.paginationButton:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
-.pageInfo {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-
-.dropdown {
-    position: absolute;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    max-height: 200px;
-    overflow-y: auto;
-    width: 100%;
-    list-style: none;
-    padding: 0;
-    margin: 5px 0 0;
-    z-index: 1000;
-}
-
-.dropdown li {
-    padding: 8px;
-    cursor: pointer;
-}
-
-.dropdown li:hover {
-    background: #f1f1f1;
-}
-
-

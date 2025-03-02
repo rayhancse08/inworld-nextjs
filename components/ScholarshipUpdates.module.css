@@ -1,49 +1,81 @@
-/* ScholarshipUpdates.module.css */
-
-/* Container */
+/* 🎓 Container */
 .container {
-    width: 1020px;
-    margin: 20px auto;
-    padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 10px;
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
 }
 
-/* Title */
+/* 🎓 Title */
 .title {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 22px;
     font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #333;
+    margin-bottom: 15px;
 }
 
-/* Notice Card */
+/* 🎓 Notice Card */
 .noticeCard {
-    background: white;
+    background: #f9fafb;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    transition: transform 0.2s ease-in-out;
+    margin-bottom: 15px;
+    border-left: 5px solid #f88f25;
+    transition: transform 0.3s ease-in-out;
 }
 
 .noticeCard:hover {
-    transform: translateY(-3px);
+    transform: scale(1.02);
 }
 
-/* Notice Header */
+/* 🎓 Notice Header */
 .noticeHeader {
-    font-size: 1.2rem;
+    font-size: 18px;
     font-weight: bold;
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
+    color: #1f7d68;
+    margin-bottom: 10px;
 }
 
-/* Notice Content */
-.noticeContent {
-    font-size: 1rem;
-    color: #555;
+/* 🎓 Notice Content */
+.noticeContent p {
+    font-size: 15px;
+    color: #333;
     line-height: 1.5;
+}
+
+/* 🎓 Loader */
+.loader {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* 📌 Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .noticeCard {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .noticeHeader {
+        font-size: 16px;
+    }
+
+    .noticeContent p {
+        font-size: 14px;
+    }
 }

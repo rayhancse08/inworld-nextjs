@@ -8,9 +8,10 @@ export default function DisclaimerTerms() {
                 <h2 className={styles.heading}>Disclaimer</h2>
                 <div className={styles.content}>
                     <p>
-                        The information on the <strong>In World Student Campus</strong> website is for general informational purposes only. While we strive for accuracy, we make no warranties about the completeness, reliability, or suitability of the content. Any reliance on this information is at your own risk.
-                        We are not liable for any loss or damage, including indirect or consequential loss, arising from the use of this website.
-                        Additionally, we have no control over the content or availability of external sites linked through our website.
+                        The information on the <strong>In World Student Campus</strong> website is for general informational purposes only.
+                        While we strive for accuracy, we make no warranties about the completeness, reliability, or suitability of the content.
+                        Any reliance on this information is at your own risk. We are not liable for any loss or damage, including indirect or consequential loss,
+                        arising from the use of this website. Additionally, we have no control over the content or availability of external sites linked through our website.
                     </p>
                 </div>
             </div>

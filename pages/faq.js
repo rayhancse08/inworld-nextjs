@@ -5,12 +5,8 @@ import styles from "../components/Home.module.css";
 
 export default function FaqPage() {
     return (
-        <div className={styles.container}>
-            <Sidebar />
-            <div className={styles.mainContent}>
-                <Header />
+
                 <Faq/>
-            </div>
-        </div>
+
     );
 }

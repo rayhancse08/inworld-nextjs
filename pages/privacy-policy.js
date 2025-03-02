@@ -6,14 +6,8 @@ import Footer from "../components/Footer";
 
 export default function PrivacyPolicyPage() {
     return (
-        <div className={styles.container}>
-            <Sidebar />
-            <div className={styles.mainContent}>
-                <Header />
-                <PrivacyPolicy />
-                <Footer />
-            </div>
 
-        </div>
+                <PrivacyPolicy />
+
     );
 }

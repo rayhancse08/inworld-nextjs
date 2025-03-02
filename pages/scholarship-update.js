@@ -5,12 +5,8 @@ import styles from "../components/Home.module.css";
 
 export default function ScholarshipUpdatesPage() {
     return (
-        <div className={styles.container}>
-            <Sidebar />
-            <div className={styles.mainContent}>
-                <Header />
+
                 <ScholarshipUpdates/>
-            </div>
-        </div>
+
     );
 }

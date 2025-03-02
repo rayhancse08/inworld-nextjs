@@ -1,74 +1,99 @@
-/* VisaTable.module.css */
-
-/* Container */
+/* 🌍 Container */
 .container {
-    width: 1020px;
+    max-width: 1020px;
     margin: 0 auto;
-    padding: 2rem;
-    background: #f9f9f9;
-    border-radius: 10px;
+    padding: 20px;
+    background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
 }
 
-/* Title */
+/* 🌍 Title */
 .title {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 22px;
     font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: #333;
+    margin-bottom: 15px;
 }
 
-/* Table Styling */
+/* 🌍 Table Wrapper */
 .table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     overflow: hidden;
 }
 
+/* 🌍 Table Headers & Cells */
 .table th, .table td {
+    border: 1px solid #ddd;
     padding: 12px;
-    border: 1px solid #35ac9c;
     text-align: left;
 }
 
 .table th {
-    background: #35ac9c;
-    color: white;
-    font-size: 1.2rem;
-}
-
-.table td {
-    font-size: 1rem;
-    color: #333;
-}
-
-.table tr:nth-child(even) {
-    background: #f2f2f2;
-}
-
-/* Link Styling */
-.applyLink {
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    background: #35ac9c;
-    padding: 8px 12px;
-    border-radius: 5px;
+    background-color: #f3f4f6;
     font-weight: bold;
+    text-align: center;
+}
+
+/* 🌍 Apply Link */
+.applyLink {
+    color: #f88f25;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 8px;
+    background-color:#2aa78c;
+    border-radius: 5px;
     transition: background 0.3s ease;
 }
 
 .applyLink:hover {
-    background: #45a049;
+    background-color: #bfdbfe;
+    text-decoration: underline;
 }
 
-/* Footer */
+/* 🌍 Footer */
 .footer {
     text-align: center;
-    font-size: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 20px;
+    font-size: 14px;
     color: #555;
+}
+
+/* 📌 Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .table th, .table td {
+        padding: 8px;
+    }
+
+    /* 📌 Make table scrollable on smaller screens */
+    .table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* 📌 Adjust Apply Link */
+    .applyLink {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
 }

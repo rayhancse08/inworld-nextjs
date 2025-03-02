@@ -35,12 +35,8 @@ export default function University() {
 
     console.log(university)
     return (
-        <div className={styles.container}>
-            <Sidebar />
-            <div className={styles.mainContent}>
-                <Header />
+
                 <UniversityProfile university={university}></UniversityProfile>
-            </div>
-        </div>
+
     );
 }

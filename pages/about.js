@@ -5,12 +5,8 @@ import styles from "../components/Home.module.css";
 
 export default function AboutWebsitePage() {
     return (
-        <div className={styles.container}>
-            <Sidebar />
-            <div className={styles.mainContent}>
-                <Header />
+
                 <AboutWebsite/>
-            </div>
-        </div>
+
     );
 }

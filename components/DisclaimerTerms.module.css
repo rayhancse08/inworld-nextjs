@@ -1,63 +1,81 @@
 /* 📌 Main Container */
 .container {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 40px;
-    background-color: #f8f9fa;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+    border: 1px solid #e5e7eb;
 }
 
-/* 📌 Section Container */
+/* 📌 Content Wrapper */
 .contentContainer {
-    background-color: white;
+    margin-bottom: 25px;
     padding: 20px;
+    background: #f9fafb;
     border-radius: 8px;
-    margin-bottom: 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
+    border-left: 5px solid #2aa78c;
+    transition: transform 0.3s ease-in-out;
 }
 
-.contentContainer:hover {
-    transform: scale(1.02);
-}
-
-/* 📌 Headings */
+/* 📌 Heading */
 .heading {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    color: #333;
-    text-align: center;
     margin-bottom: 15px;
+    color: #2aa78c;
+    text-align: center;
 }
 
 /* 📌 Paragraph */
-.content p {
+.content {
     font-size: 16px;
     line-height: 1.6;
-    color: #555;
+    color: #444;
+    text-align: justify;
 }
 
 /* 📌 List */
 .list {
-    padding-left: 20px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
 }
 
 .list li {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    border-left: 5px solid #f88f25;
+    transition: transform 0.3s ease-in-out;
     font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 8px;
+    color: #333;
 }
 
-/* 📌 Links */
-.content a {
-    color: #2aa78c;
-    text-decoration: none;
-    font-weight: bold;
+.list li:hover {
+    transform: scale(1.02);
 }
 
-.content a:hover {
-    text-decoration: underline;
+/* 📌 Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .content {
+        font-size: 14px;
+    }
+
+    .list li {
+        padding: 10px;
+        font-size: 14px;
+    }
 }

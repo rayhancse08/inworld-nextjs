@@ -1,6 +1,7 @@
 import styles from "./TopCountries.module.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+
 export default function TopCountries() {
     const [countries, setCountries] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -13,7 +14,7 @@ export default function TopCountries() {
                 setLoading(false);
             })
             .catch((error) => {
-                console.error("Error fetching universities:", error);
+                console.error("Error fetching countries:", error);
                 setLoading(false);
             });
     }, []);
@@ -24,15 +25,6 @@ export default function TopCountries() {
 
     return (
         <div className={styles.container}>
-            {/* Filter Section */}
-            {/*<div className={styles.filterSection}>*/}
-            {/*    <label className={styles.label}>*/}
-            {/*        Country*/}
-            {/*        <input type="text" className={styles.input} placeholder="Search country..." />*/}
-            {/*    </label>*/}
-            {/*    <button className={styles.filterButton}>🔍 Search</button>*/}
-            {/*</div>*/}
-
             {/* Table Section */}
             <div className={styles.tableContainer}>
                 <h2 className={styles.heading}>🌍 Top Countries with the Best Universities</h2>

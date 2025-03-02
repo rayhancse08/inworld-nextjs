@@ -6,14 +6,10 @@ import Footer from "../components/Footer";
 
 export default function DisclaimerTermsPage() {
     return (
-        <div className={styles.container}>
-            <Sidebar />
-            <div className={styles.mainContent}>
-                <Header />
-                <DisclaimerTerms />
-                <Footer />
-            </div>
 
-        </div>
+                <DisclaimerTerms />
+
+
+
     );
 }

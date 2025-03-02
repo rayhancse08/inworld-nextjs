@@ -1,149 +1,133 @@
-/* General Container */
+/* 🌍 Container */
 .container {
-    width: 1020px;
-    margin: 20px;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
+    background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
 }
 
-/* Filter Section */
-.filterSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-}
-
-.input {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 400px;
-    font-size: 14px;
-}
-
-.filterButton {
-    background-color: #f88f25;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.filterButton:hover {
-    background-color: #5a9216;
-}
-
-/* Table Styling */
+/* 🌍 Table Container */
 .tableContainer {
+    overflow-x: auto; /* Enables scrolling on smaller screens */
     margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .heading {
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
+/* 🌍 Table */
 .table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
 }
 
 .table th {
-    background: #35ac9c;
-    color: white;
-    padding: 12px;
-    text-align: left;
-    font-size: 16px;
-}
-
-.table td {
-    padding: 12px;
-    font-size: 14px;
-    color: #333;
-    border-bottom: 1px solid #ddd;
-}
-
-.row:nth-child(even) {
-    background-color: #f4f4f4;
-}
-
-.row:hover {
-    background-color: rgba(121, 187, 36, 0.1);
-}
-
-/* Rank Badge */
-.rankBadge {
-    background: linear-gradient(45deg, #ff8c00, #ff4500);
-    color: white;
-    padding: 6px 12px;
-    border-radius: 50px;
+    background-color: #f3f4f6;
     font-weight: bold;
+}
+
+/* 🌍 Country Row */
+.row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* 🌍 Rank Badge */
+.rankBadge {
+    background-color: #f88f25;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 20px;
     font-size: 14px;
+    font-weight: bold;
     display: inline-block;
 }
 
-/* Country Name */
+/* 🌍 Country Name */
 .countryName {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     font-size: 16px;
-    font-weight: bold;
-    color: #333;
+    font-weight: 500;
+    color: #2aa78c;
 }
 
-/* Flag Styling */
+/* 🌍 Country Flag */
 .flag {
     width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    height: 20px;
+    border-radius: 4px;
+    object-fit: cover;
 }
 
-/* Loader */
+/* 🌍 Country Link */
+.countryLink {
+    color: #2aa78c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.countryLink:hover {
+    color: #f88f25;
+    text-decoration: underline;
+}
+
+/* 🌍 Loader */
 .loader {
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-    color: #666;
-    padding: 20px;
+    color: #2563eb;
+    margin-top: 20px;
 }
 
+/* 📌 Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
 
-.countryLink {
-    text-decoration: none;
-    color: #35ac9c;
-    font-weight: bold;
-}
+    .table th,
+    .table td {
+        padding: 8px;
+        font-size: 14px;
+    }
 
-.countryLink:hover {
-    text-decoration: underline;
-}
+    .rankBadge {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
 
+    .countryName {
+        font-size: 14px;
+    }
 
+    .flag {
+        width: 24px;
+        height: 16px;
+    }
 
-.noData {
-    text-align: center;
-    font-size: 18px;
-    color: red;
+    .countryLink {
+        font-size: 14px;
+    }
 }

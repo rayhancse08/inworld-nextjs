@@ -5,12 +5,8 @@ import styles from "../components/Home.module.css";
 
 export default function ContactFormPage() {
     return (
-        <div className={styles.container}>
-            <Sidebar />
-            <div className={styles.mainContent}>
-                <Header />
+
                 <ContactForm/>
-            </div>
-        </div>
+
     );
 }

@@ -223,7 +223,7 @@ export default function UniversityRanking() {
                                             <img src={uni.logo} alt="University Logo"
                                                  className={styles.universityLogo}/>
                                         )}
-                                        <a href={`/university/${uni.slug}`} className={styles.universityName}>
+                                        <a href={`/universities/${uni.slug}`} className={styles.universityName}>
                                             {uni.name}
                                         </a>
                                     </div>

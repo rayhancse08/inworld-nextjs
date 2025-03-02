@@ -36,12 +36,8 @@ export default function Country() {
     //
     // console.log(country)
     return (
-        <div className={styles.container}>
-            <Sidebar />
-            <div className={styles.mainContent}>
-                <Header />
+
                 <CountryUniversities countrySlug={slug} />
-            </div>
-        </div>
+
     );
 }

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import styles from "./CountryUniversities.module.css";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function CountryUniversities({ countrySlug }) {
     const [country, setCountry] = useState(null);
     const [loading, setLoading] = useState(true);
-    const router = useRouter();
 
     useEffect(() => {
         const fetchCountryData = async () => {
@@ -35,23 +34,15 @@ export default function CountryUniversities({ countrySlug }) {
     return (
         <div className={styles.container}>
             {/* Country Header with Flag */}
-            {/*<div className={styles.header}>*/}
-            {/*    {country.flag && (*/}
-            {/*        <Image src={country.flag} alt={`${country.name} Flag`} width={60} height={40}*/}
-            {/*               className={styles.flag} unoptimized />*/}
-            {/*    )}*/}
-            {/*    <h2>{country.name} Universities</h2>*/}
-            {/*</div>*/}
+            <h2 className={styles.heading}>
+                {country.flag && (
+                    <Image src={country.flag} alt={`${country.name} Flag`} width={30} height={30} className={styles.flag} unoptimized />
+                )}
+                {country.name} Universities
+            </h2>
 
             {/* Universities Table */}
             <div className={styles.tableContainer}>
-                <h2 className={styles.heading}>
-                    {country.flag && (
-                        <Image src={country.flag} alt={`${country.name} Flag`} width={30} height={30}
-                               className={styles.flag} unoptimized/>
-                    )}
-                    {country.name} Universities
-                </h2>
                 <table className={styles.table}>
                     <thead>
                     <tr>
@@ -73,15 +64,13 @@ export default function CountryUniversities({ countrySlug }) {
                                 <td>
                                     <div className={styles.universityContainer}>
                                         {uni.logo && (
-                                            <img src={uni.logo} alt="University Logo"
-                                                 className={styles.universityLogo}/>
+                                            <img src={uni.logo} alt="University Logo" className={styles.universityLogo} />
                                         )}
-                                        <a href={`/university/${uni.slug}`} className={styles.universityName}>
+                                        <Link href={`/universities/${uni.slug}`} className={styles.universityName}>
                                             {uni.name}
-                                        </a>
+                                        </Link>
                                     </div>
                                 </td>
-
                                 <td>{uni.city}</td>
                             </tr>
                         ))
