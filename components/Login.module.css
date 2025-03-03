@@ -1,53 +1,118 @@
+/* Container */
 .container {
-    max-width: 600px;
-    margin: auto;
+    max-width: 400px;
+    margin: 80px auto;
     padding: 20px;
-    background: #fff;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Heading */
 .heading {
     font-size: 24px;
+    font-weight: bold;
     margin-bottom: 20px;
+    color: #333;
 }
 
+/* Error message */
 .error {
+    background: rgba(255, 0, 0, 0.1);
     color: red;
-    font-size: 14px;
+    padding: 8px;
+    border-radius: 5px;
     margin-bottom: 10px;
+    font-size: 14px;
 }
 
+/* Form */
 .form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
+/* Labels */
+.form label {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    color: #555;
+}
+
+/* Input fields */
 .inputField {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
 }
 
+/* Input focus effect */
+.inputField:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Submit Button */
 .buttonSubmit {
-    padding: 10px;
-    border: none;
+    width: 100%;
     background: #f88f25;
     color: white;
+    padding: 12px;
     font-size: 16px;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
+/* Hover effect */
+.buttonSubmit:hover {
+    background: #0056b3;
+}
+
+/* Loading state */
 .buttonSubmit:disabled {
-    background: #ccc;
+    background: gray;
     cursor: not-allowed;
 }
 
-.buttonSubmit:hover {
-    background: #5b2c6f;
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .heading {
+        font-size: 22px;
+    }
+
+    .inputField {
+        font-size: 14px;
+    }
+
+    .buttonSubmit {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
