@@ -1,7 +1,13 @@
+import dynamic from "next/dynamic";
+import Link from "next/link";
 import styles from "./Footer.module.css";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
-export default function Footer() {
+// Lazy-load icons to reduce the initial page load
+const FaFacebookF = dynamic(() => import("react-icons/fa").then((mod) => mod.FaFacebookF), { ssr: false });
+const FaTwitter = dynamic(() => import("react-icons/fa").then((mod) => mod.FaTwitter), { ssr: false });
+const FaInstagram = dynamic(() => import("react-icons/fa").then((mod) => mod.FaInstagram), { ssr: false });
+
+export default function Footer({ year }) {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
@@ -20,15 +26,15 @@ export default function Footer() {
 
                 {/* Navigation Links */}
                 <div className={styles.navLinks}>
-                    <a href="/privacy-policy/">Privacy Policy</a>
-                    <a href="/terms-conditions/">T&C</a>
-                    <a href="/disclaimer-terms/">Disclaimer</a>
+                    <Link href="/privacy-policy">Privacy Policy</Link>
+                    <Link href="/terms-conditions">T&C</Link>
+                    <Link href="/disclaimer-terms">Disclaimer</Link>
                 </div>
 
                 {/* Footer Bottom */}
                 <div className={styles.footerBottom}>
                     <p>
-                        © {new Date().getFullYear()}
+                        © <span className={styles.year}>{year}</span>{" "}
                         <a href="https://inworldstudentcampus.com/" target="_blank" rel="noopener noreferrer">
                             In World Student Campus
                         </a>
@@ -37,4 +43,11 @@ export default function Footer() {
             </div>
         </footer>
     );
+}
+
+// Pre-render the current year for faster loading
+export async function getStaticProps() {
+    return {
+        props: { year: new Date().getFullYear() },
+    };
 }

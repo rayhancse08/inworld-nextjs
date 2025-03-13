@@ -2,7 +2,7 @@
 .container {
     padding: 20px;
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f8f9fa !important;
 }
 
 /* 📌 Filter Section */
@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 15px;
-    background: white;
+    background: white !important;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -30,7 +30,7 @@
     margin-top: 5px;
     padding: 8px;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc !important;
     border-radius: 5px;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .filterButton {
-    background-color: #f88f25;
+    background-color: #f88f25 !important;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -60,7 +60,7 @@
 }
 
 .filterButton:hover {
-    background-color: #68a31f;
+    background-color: #68a31f !important;
 }
 
 /* 📌 Table Section */
@@ -89,18 +89,18 @@
 }
 
 .table th, .table td {
-    border: 1px solid #ddd;
+    border: 1px solid #ddd !important;
     padding: 10px;
     text-align: left;
 }
 
 .table th {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2 !important;
     font-weight: bold;
 }
 
 .tableRow:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9 !important;
 }
 
 /* 📌 University Row */
@@ -146,7 +146,7 @@
 }
 
 .paginationButton {
-    background-color: #f88f25;
+    background-color: #f88f25 !important;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -158,18 +158,18 @@
 }
 
 .paginationButton:hover {
-    background-color: #35ac9c;
+    background-color: #35ac9c !important;
 }
 
 .paginationButton:disabled {
-    background-color: #cccccc;
+    background-color: #cccccc !important;
     cursor: not-allowed;
 }
 
 .pageInfo {
     font-size: 16px;
     font-weight: bold;
-    color: #333;
+    color: #333 !important;
 }
 
 /* 📌 Autocomplete Dropdown */
@@ -183,7 +183,7 @@
     width: 100%;
     list-style: none;
     padding: 0;
-    margin: 5px 0 0;
+    margin: 65px 0 0;
     z-index: 1000;
 }
 

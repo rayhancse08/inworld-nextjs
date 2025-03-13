@@ -1,60 +1,86 @@
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Image from "next/image";
 import styles from "./UniversityList.module.css";
 
-export default function UniversityList() {
-    const [universities, setUniversities] = useState([]);
-    const [loading, setLoading] = useState(true);
+export default function UniversityList({ universities = [] }) {
+    const router = useRouter();
 
-    useEffect(() => {
-        fetch("https://inworldstudentcampus.com/api/countries/") // Replace with your API URL
-            .then((response) => response.json())
-            .then((data) => {
-                setUniversities(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error("Error fetching universities:", error);
-                setLoading(false);
-            });
-    }, []);
-
-    if (loading) {
-        return <div className={styles.loader}>Loading universities...</div>;
+    if (!universities.length) {
+        return <p>No universities available.</p>;
     }
 
     return (
         <div className={styles.container}>
-            {universities.map((country, index) => (
-                <div key={index} className={styles.card}>
-                    <div className={styles.header}>
-                        <img src={country.flag} alt={country.name} className={styles.flag} />
-                        <h2 className={styles.title}>{country.name}</h2>
-                    </div>
-                    <table className={styles.table}>
-                        {/*<thead>*/}
-                        {/*<tr>*/}
-                        {/*    <th>University</th>*/}
-                        {/*</tr>*/}
-                        {/*</thead>*/}
-                        <tbody>
-                        {country.universities.map((university, i) => (
-                            <tr key={i}>
-                                <td>
-                                    <div className={styles.universityRow}> {/* ✅ Row layout */}
-                                        <img
-                                            src={university.logo}
-                                            alt={university.name}
+            <div className={styles.gridContainer}>
+                {universities.map((country, index) => (
+                    <div key={index} className={styles.card}>
+                        <div className={styles.header}>
+                            <Image
+                                src={country?.flag || "/default-flag.png"}
+                                alt={country?.name + " Flag"}
+                                className={styles.flag}
+                                width={30}
+                                height={30}
+                                priority
+                                quality={50}
+                            />
+                            <h2 className={styles.title}>{country?.name || "Unknown Country"}</h2>
+                        </div>
+                        <hr />
+                        <table className={styles.table}>
+                            <tbody>
+                            {(country?.universities || []).map((university, i) => (
+                                <tr
+                                    key={i}
+                                    className={styles.universityRow}
+                                    onClick={() =>
+                                        router.push(`/universities/${university?.slug}`)
+                                    }
+                                >
+                                    <td>
+                                        <Image
+                                            src={university?.logo || "/default-logo.png"}
+                                            alt={university?.name || "University Logo"}
                                             className={styles.logo}
+                                            width={30}
+                                            height={30}
+                                            quality={50}
+                                            priority={index < 2}
                                         />
-                                        <span className={styles.universityName} onClick={() => window.location.href = `/universities/${university.slug}`}>{university.name}</span>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
-                        </tbody>
-                    </table>
-                </div>
-            ))}
+                                        <span className={styles.universityName}>
+                                                {university?.name || "Unknown University"}
+                                            </span>
+                                    </td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                ))}
+            </div>
         </div>
     );
+}
+
+export async function getServerSideProps() {
+    try {
+        const response = await fetch("https://inworldstudentcampus.com/api/countries/");
+        if (!response.ok) throw new Error("Failed to fetch");
+
+        const data = await response.json();
+        console.log("Data is ",data)
+
+        return {
+            props: {
+                universities: Array.isArray(data) ? data : [],
+            },
+        };
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return {
+            props: {
+                universities: [],
+            },
+        };
+    }
 }

@@ -60,7 +60,7 @@
 
 /* Signup Button */
 .signupButton {
-    background: #f88f25;
+    background: #f88f25 !important;
     color: white;
     border: none;
     padding: 10px;

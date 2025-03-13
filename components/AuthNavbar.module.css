@@ -5,10 +5,10 @@
 }
 
 .profile {
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: none;
     color: white;
-    margin-right: 15px;
+    margin-right: 5px;
     display: flex;
     align-items: center;
 }

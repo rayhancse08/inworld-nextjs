@@ -11,11 +11,19 @@ export default function Sidebar() {
             <button
                 className={styles.toggleButton}
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-                aria-label={isSidebarOpen ? "Close Sidebar" : "Open Sidebar"}
+                aria-label="Toogle Button"
                 aria-expanded={isSidebarOpen}
             >
                 {isSidebarOpen ? "✖ Close" : "☰"}
             </button>
+
+            {/*<button*/}
+            {/*    className={styles.toggleButton}*/}
+            {/*    onClick={() => setIsSidebarOpen(!isSidebarOpen)}*/}
+            {/*    aria-expanded={isSidebarOpen}*/}
+            {/*>*/}
+            {/*    {isSidebarOpen ? "✖ Close Menu" : "☰ Open Menu"}*/}
+            {/*</button>*/}
 
 
             {/* Sidebar Section */}

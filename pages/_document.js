@@ -5,11 +5,13 @@ export default function Document() {
     <Html lang="en">
         <Head>
             <link rel="icon" type="image/x-icon" href="/logo.png"/>
+            <meta name="color-scheme" content="light only"/>
+            <meta name="theme-color" content="#ffffff"/>
         </Head>
         <body className="antialiased">
         <Main/>
-        <NextScript />
-      </body>
+        <NextScript/>
+        </body>
     </Html>
   );
 }

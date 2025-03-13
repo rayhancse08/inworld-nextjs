@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force light mode everywhere */
+html, body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Apply light theme to all elements */
+* {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+/* Prevent browser dark mode */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

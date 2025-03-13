@@ -37,7 +37,7 @@ export default function Header() {
     return (
         <header className={styles.header}>
             {/* Mobile Menu Toggle Button */}
-            <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
+            <button className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)} aria-label=" Header Toogle Button">
                 {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
 

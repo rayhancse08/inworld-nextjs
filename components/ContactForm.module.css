@@ -76,7 +76,7 @@
 /* Submit Button */
 .submitButton {
     width: 100%;
-    background-color: #35ac9c;
+    background-color: #35ac9c !important;
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
@@ -88,5 +88,5 @@
 }
 
 .submitButton:hover {
-    background-color: #2b8e82;
+    background-color: #2b8e82 !important;
 }
