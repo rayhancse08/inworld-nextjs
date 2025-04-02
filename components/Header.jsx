@@ -10,7 +10,7 @@ export default function Header() {
     const [loading, setLoading] = useState(false); // Loading state
     const [menuOpen, setMenuOpen] = useState(false); // Mobile menu toggle
 
-    // Fetch universities when query changes
+    // Fetch university when query changes
     useEffect(() => {
         if (query.trim().length < 2) {
             setUniversities([]); // Clear results if input is too short
@@ -24,7 +24,7 @@ export default function Header() {
                 const data = await response.json();
                 setUniversities(data?.results || []);
             } catch (error) {
-                console.error("Error fetching universities:", error);
+                console.error("Error fetching university:", error);
             }
             setLoading(false);
         };
@@ -50,7 +50,7 @@ export default function Header() {
             <div className={styles.searchContainer}>
                 <input
                     type="text"
-                    placeholder="Search University..."
+                    placeholder="Search .."
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     className={styles.searchInput}
@@ -66,7 +66,7 @@ export default function Header() {
                             universities.map((uni, index) => (
                                 <div key={index} className={styles.resultItem}>
                                     <Link
-                                        href={`/universities/${uni.slug}`}
+                                        href={`/university/${uni.slug}`}
                                         passHref
                                         target="_blank"
                                         rel="noopener noreferrer"

@@ -91,8 +91,8 @@ export default function UniversityProfile({ university }) {
             <div className={styles.header}>
                 <div className={styles.universityInfo}>
                     <Image
-                        src={university?.logo || "https://via.placeholder.com/80"}
-                        alt={university?.name}
+                        src={university?.logo || "University Logo"}
+                        alt="University Pic"
                         width={60}
                         height={60}
                         className={styles.universityLogo}

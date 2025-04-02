@@ -1,165 +1,129 @@
+/* Container styles */
 .container {
-    /*padding: 20px;*/
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
 }
 
-/* ✅ Grid Layout for Better Mobile Performance */
+/* Grid for the university cards */
 .gridContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 20px;
     width: 100%;
-    max-width: 1200px;
-    min-height: 500px;
 }
 
-/*.gridContainer {*/
-/*    display: grid;*/
-/*    grid-template-columns: repeat(2, 1fr);*/
-/*    gap: 20px;*/
-/*    min-height: 500px; !* Reserve space to prevent shifting *!*/
-/*}*/
-
-
-/* ✅ Lightweight Card Design */
+/* Individual card styles */
 .card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 12px;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease-in-out;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
-    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ Optimize Header for LCP */
+/* Header for country section */
 .header {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 .flag {
-    width: 40px;  /* Explicit width */
-    height: 30px; /* Explicit height */
-    object-fit: cover;
     border-radius: 4px;
 }
 
 .title {
-    font-size: 16px;
+    margin-left: 10px;
+    font-size: 18px;
     font-weight: bold;
 }
 
-/* ✅ Reduce Render-Blocking Table */
-.table {
-    min-height: 200px;
-    width: 100%;
-    border-collapse: collapse;
+/* University List and Rows */
+.universityList {
+    display: flex;
+    flex-direction: column;
 }
 
-/*!* ✅ Hover Effect for Better UX *!*/
-.universityRow td {
-    min-height: 40px;
+.universityRow {
     display: flex;
     align-items: center;
-    gap: 10px;
+    padding: 10px 0;
     cursor: pointer;
-    padding: 6px 8px;
-    transition: background 0.2s ease-in-out;
-}
-/*.table {*/
-/*    min-height: 200px; !* Reserve space *!*/
-/*}*/
-
-/*.universityRow td {*/
-/*    min-height: 40px; !* Ensure rows don’t shift *!*/
-/*}*/
-
-
-.universityRow td:hover {
-    background: #f5f5f5;
-    border-radius: 6px;
+    transition: background-color 0.2s ease;
 }
 
-/* ✅ Optimize Logo for LCP */
+.universityRow:hover {
+    background-color: #f1f1f1;
+}
+
 .logo {
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-}
-
-/* ✅ Faster Skeleton Loader */
-.skeletonLoaderContainer {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-}
-
-/*.skeletonCard {*/
-/*    width: 260px;*/
-/*    height: 110px;*/
-/*    background: linear-gradient(90deg, #f3f3f3 25%, #ececec 50%, #f3f3f3 75%);*/
-/*    background-size: 200% 100%;*/
-/*    animation: shimmer 1.5s infinite linear;*/
-/*    border-radius: 8px;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    gap: 6px;*/
-/*    padding: 10px;*/
-/*}*/
-
-.skeletonCard {
-    width: 100%;
-    height: 150px; /* Match expected height of university cards */
-    background-color: #f0f0f0;
-    border-radius: 8px;
-}
-
-
-.skeletonImage {
-    width: 40px;
-    height: 30px;
-    background: #ddd;
-    border-radius: 4px;
-}
-
-.skeletonText {
-    width: 80%;
-    height: 10px;
-    background: #eee;
-    border-radius: 4px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .universityName {
-    font-size: 16px;
-    font-weight: 500;
-    color: #222;
-    display: inline-block; /* ✅ Avoid unnecessary reflows */
-    white-space: nowrap;
-    min-height: 20px; /* Adjust based on font size */
-    line-height: 1.2;
-    /* ✅ Prevent layout shifts */
+    margin-left: 10px;
+    font-size: 14px;
 }
 
+/* Skeleton Loader for loading states */
+.skeletonLoader {
+    width: 100%;
+    height: 50px;
+    background-color: #e0e0e0;
+    animation: skeletonLoading 1.5s infinite ease-in-out;
+}
+
+@keyframes skeletonLoading {
+    0% {
+        background-color: #e0e0e0;
+    }
+    50% {
+        background-color: #c7c7c7;
+    }
+    100% {
+        background-color: #e0e0e0;
+    }
+}
+
+/* Mobile responsiveness for smaller screens */
 @media (max-width: 768px) {
-    .universityName {
-        font-size: 12px;
-        font-weight: 400;
-        color: #222;
-        display: inline-block; /* ✅ Avoid unnecessary reflows */
-        white-space: nowrap; /* ✅ Prevent layout shifts */
+    .container {
+        padding: 10px;
     }
 
-}
-@keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    .gridContainer {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .universityRow {
+        padding: 8px 0;
+    }
+
+    .logo {
+        width: 15px;
+        height: 15px;
+    }
+
+    .universityName {
+        font-size: 10px;
+        margin-left: 2px;
+    }
+    .title{
+        font-size: 12px;
+    }
 }

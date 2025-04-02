@@ -12,7 +12,7 @@ const steps = [
     {
         title: "Research and Shortlist Institutions",
         points: [
-            "Search for universities: Use online resources, university rankings, and academic advisors to find institutions that match your criteria.",
+            "Search for university: Use online resources, university rankings, and academic advisors to find institutions that match your criteria.",
             "Check eligibility criteria: Review admission requirements for each university, including academic qualifications, language proficiency, and standardized tests.",
         ],
     },
@@ -27,7 +27,7 @@ const steps = [
         title: "Financial Planning",
         points: [
             "Estimate costs: Calculate tuition fees, accommodation, living expenses, health insurance, travel costs, and other expenses.",
-            "Look for scholarships and financial aid: Research scholarships, grants, and financial aid offered by universities, governments, and private organizations.",
+            "Look for scholarships and financial aid: Research scholarships, grants, and financial aid offered by university, governments, and private organizations.",
             "Budgeting: Plan your finances and consider options like part-time work, if permitted.",
         ],
     },
@@ -35,7 +35,7 @@ const steps = [
         title: "Application Process",
         points: [
             "Prepare application documents: Gather necessary documents like transcripts, letters of recommendation, SOP, resume/CV, and application forms.",
-            "Apply to universities: Submit applications before the deadlines. Ensure all documents are correctly filled out and submitted.",
+            "Apply to university: Submit applications before the deadlines. Ensure all documents are correctly filled out and submitted.",
         ],
     },
     {
@@ -65,7 +65,7 @@ const steps = [
     {
         title: "Pre-Departure Preparations",
         points: [
-            "Attend orientation: Many universities offer pre-departure orientation sessions.",
+            "Attend orientation: Many university offer pre-departure orientation sessions.",
             "Health and insurance: Ensure you have adequate health insurance coverage.",
             "Understand the culture: Familiarize yourself with the cultural norms and practices of the host country.",
         ],

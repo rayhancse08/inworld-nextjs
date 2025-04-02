@@ -82,15 +82,32 @@
 /*    padding-left: 20px;*/
 /*}*/
 
+/*.submenu {*/
+/*    max-height: 0;*/
+/*    overflow: hidden;*/
+/*    transition: max-height 0.3s ease-in-out;*/
+/*}*/
+
+/*.submenuOpen {*/
+/*    max-height: 300px; !* Adjust based on content *!*/
+/*}*/
+
+/* 📌 Submenu */
 .submenu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    list-style-type: none;
+    padding-left: 20px;
 }
 
+/* 📌 Submenu Open */
 .submenuOpen {
-    max-height: 300px; /* Adjust based on content */
+    max-height: 500px; /* Adjust height based on content */
+    opacity: 1;
 }
+
 
 .submenuItem {
     padding: 8px;

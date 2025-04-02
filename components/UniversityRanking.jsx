@@ -1,5 +1,6 @@
 import styles from "./UniversityRanking.module.css";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function UniversityRanking() {
     const [universities, setUniversities] = useState([]);
@@ -7,7 +8,7 @@ export default function UniversityRanking() {
     const [loading, setLoading] = useState(false); // No loading on filter clicks
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const pageSize = 100; // Display 10 universities per page
+    const pageSize = 100; // Display 10 university per page
 
     // Filter States
     const [country, setCountry] = useState("");
@@ -41,7 +42,7 @@ export default function UniversityRanking() {
         fetchData();
     }, []);
 
-    // Fetch universities
+    // Fetch university
     const fetchUniversities = async (isInitialLoad = false) => {
         try {
             if (isInitialLoad) setInitialLoading(true);
@@ -61,7 +62,7 @@ export default function UniversityRanking() {
             if (isInitialLoad) setInitialLoading(false);
             else setLoading(false);
         } catch (error) {
-            console.error("Error fetching universities:", error);
+            console.error("Error fetching university:", error);
             setUniversities([]);
             setLoading(false);
         }
@@ -72,7 +73,7 @@ export default function UniversityRanking() {
         fetchUniversities(true);
     }, []);
 
-    // Fetch universities when page changes
+    // Fetch university when page changes
     useEffect(() => {
         fetchUniversities();
     }, [currentPage]);
@@ -223,9 +224,9 @@ export default function UniversityRanking() {
                                             <img src={uni.logo} alt="University Logo"
                                                  className={styles.universityLogo}/>
                                         )}
-                                        <a href={`/universities/${uni.slug}`} className={styles.universityName}>
+                                        <Link href={`/university/${uni.slug}`} className={styles.universityName}>
                                             {uni.name}
-                                        </a>
+                                        </Link>
                                     </div>
                                 </td>
                                 <td>{uni.city}</td>

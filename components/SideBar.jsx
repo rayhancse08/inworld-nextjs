@@ -47,31 +47,57 @@ export default function Sidebar() {
                         Guide</strong></li>
 
                     {/* Dropdown for "How to Write" */}
+                    {/*<li className={styles.dropdown} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>*/}
+                    {/*    📝 <strong>How to Write</strong> ▼*/}
+                    {/*</li>*/}
+                    {/*{isDropdownOpen && (*/}
+                    {/*    <ul className={styles.submenu}>*/}
+                    {/*        <li className={styles.submenuItem}*/}
+                    {/*            onClick={() => window.open('/pdfs/Personal_statement_Demo.pdf', '_blank')}>*/}
+                    {/*            📄 Personal Statement*/}
+                    {/*        </li>*/}
+                    {/*        <li className={styles.submenuItem}*/}
+                    {/*            onClick={() => window.open('/pdfs/Purpose_of_study.pdf', '_blank')}>💡 Purpose of Study*/}
+                    {/*        </li>*/}
+                    {/*        <li className={styles.submenuItem}*/}
+                    {/*            onClick={() => window.open('/pdfs/Resume.pdf', '_blank')}>👤 Resume*/}
+                    {/*        </li>*/}
+                    {/*        <li className={styles.submenuItem}*/}
+                    {/*            onClick={() => window.open('/pdfs/HOW_TO_WRITE_RESEARCH_PLAN.pdf', '_blank')}>📋 How to*/}
+                    {/*            Write Research Plan*/}
+                    {/*        </li>*/}
+                    {/*        <li className={styles.submenuItem}*/}
+                    {/*            onClick={() => window.open('/pdfs/RecommendationLetter.pdf', '_blank')}>✉️ Reference*/}
+                    {/*            Letter*/}
+                    {/*        </li>*/}
+                    {/*    </ul>*/}
+                    {/*)}*/}
+
                     <li className={styles.dropdown} onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                         📝 <strong>How to Write</strong> ▼
                     </li>
-                    {isDropdownOpen && (
-                        <ul className={styles.submenu}>
-                            <li className={styles.submenuItem}
-                                onClick={() => window.open('/pdfs/Personal_statement_Demo.pdf', '_blank')}>
-                                📄 Personal Statement
-                            </li>
-                            <li className={styles.submenuItem}
-                                onClick={() => window.open('/pdfs/Purpose_of_study.pdf', '_blank')}>💡 Purpose of Study
-                            </li>
-                            <li className={styles.submenuItem}
-                                onClick={() => window.open('/pdfs/Resume.pdf', '_blank')}>👤 Resume
-                            </li>
-                            <li className={styles.submenuItem}
-                                onClick={() => window.open('/pdfs/HOW_TO_WRITE_RESEARCH_PLAN.pdf', '_blank')}>📋 How to
-                                Write Research Plan
-                            </li>
-                            <li className={styles.submenuItem}
-                                onClick={() => window.open('/pdfs/RecommendationLetter.pdf', '_blank')}>✉️ Reference
-                                Letter
-                            </li>
-                        </ul>
-                    )}
+                    <ul className={`${styles.submenu} ${isDropdownOpen ? styles.submenuOpen : ""}`}>
+                        <li className={styles.submenuItem}
+                            onClick={() => window.open('/pdfs/Personal_statement_Demo.pdf', '_blank')}>
+                            📄 Personal Statement
+                        </li>
+                        <li className={styles.submenuItem}
+                            onClick={() => window.open('/pdfs/Purpose_of_study.pdf', '_blank')}>
+                            💡 Purpose of Study
+                        </li>
+                        <li className={styles.submenuItem} onClick={() => window.open('/pdfs/Resume.pdf', '_blank')}>
+                            👤 Resume
+                        </li>
+                        <li className={styles.submenuItem}
+                            onClick={() => window.open('/pdfs/HOW_TO_WRITE_RESEARCH_PLAN.pdf', '_blank')}>
+                            📋 How to Write Research Plan
+                        </li>
+                        <li className={styles.submenuItem}
+                            onClick={() => window.open('/pdfs/RecommendationLetter.pdf', '_blank')}>
+                            ✉️ Reference Letter
+                        </li>
+                    </ul>
+
 
                     <li className={styles.menuItem}
                         onClick={() => window.location.href = '/visa-application'}>🌎 <strong>Countries Visa Application

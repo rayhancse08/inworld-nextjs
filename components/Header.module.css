@@ -160,7 +160,7 @@
     }
 
     .searchContainer {
-        width: 100%;
+        width: 50%;
     }
 
     .searchInput {
@@ -168,6 +168,6 @@
     }
 
     .authButtons {
-
+    gap:5px;
     }
 }

@@ -26,9 +26,9 @@ export default function Footer({ year }) {
 
                 {/* Navigation Links */}
                 <div className={styles.navLinks}>
-                    <Link href="/privacy-policy">Privacy Policy</Link>
-                    <Link href="/terms-conditions">T&C</Link>
-                    <Link href="/disclaimer-terms">Disclaimer</Link>
+                    <Link href="/privacy-policy/">Privacy Policy</Link>
+                    <Link href="/terms-conditions/">T&C</Link>
+                    <Link href="/disclaimer-terms/">Disclaimer</Link>
                 </div>
 
                 {/* Footer Bottom */}

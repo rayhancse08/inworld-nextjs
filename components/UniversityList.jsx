@@ -34,7 +34,7 @@ export default function UniversityList({ universities = [] }) {
                                     key={i}
                                     className={styles.universityRow}
                                     onClick={() =>
-                                        router.push(`/universities/${university?.slug}`)
+                                        router.push(`/university/${university?.slug}`)
                                     }
                                 >
                                     <td>
@@ -44,8 +44,9 @@ export default function UniversityList({ universities = [] }) {
                                             className={styles.logo}
                                             width={30}
                                             height={30}
-                                            quality={50}
-                                            priority={index < 2}
+
+                                            placeholder="blur" // Use a blurry image placeholder while loading
+                                            blurDataURL={university?.logo || "/default-logo.png"} // Provide a low-quality image
                                         />
                                         <span className={styles.universityName}>
                                                 {university?.name || "Unknown University"}
@@ -62,25 +63,4 @@ export default function UniversityList({ universities = [] }) {
     );
 }
 
-export async function getServerSideProps() {
-    try {
-        const response = await fetch("https://inworldstudentcampus.com/api/countries/");
-        if (!response.ok) throw new Error("Failed to fetch");
 
-        const data = await response.json();
-        console.log("Data is ",data)
-
-        return {
-            props: {
-                universities: Array.isArray(data) ? data : [],
-            },
-        };
-    } catch (error) {
-        console.error("Error fetching data:", error);
-        return {
-            props: {
-                universities: [],
-            },
-        };
-    }
-}

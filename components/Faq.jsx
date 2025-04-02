@@ -20,7 +20,7 @@ const faqData = [
                     "Consider factors such as the quality of education, language of instruction, cost of living, cultural preferences, and career opportunities. Research university rankings and specific programs.",
             },
             {
-                question: "What are the best universities for my field of study?",
+                question: "What are the best university for my field of study?",
                 answer:
                     "Look at global rankings such as QS World University Rankings, THE, and subject-specific rankings. Consult academic advisors and alumni for recommendations.",
             },
@@ -47,12 +47,12 @@ const faqData = [
             {
                 question: "How much does it cost to study abroad?",
                 answer:
-                    "Costs vary widely but include tuition fees, accommodation, living expenses, health insurance, and travel. Research specific universities and cities for detailed budgets.",
+                    "Costs vary widely but include tuition fees, accommodation, living expenses, health insurance, and travel. Research specific university and cities for detailed budgets.",
             },
             {
                 question: "Are there scholarships or financial aid available?",
                 answer:
-                    "Yes, many universities, governments, and private organizations offer scholarships, grants, and financial aid for international students. Research and apply early.",
+                    "Yes, many university, governments, and private organizations offer scholarships, grants, and financial aid for international students. Research and apply early.",
             },
         ],
     },

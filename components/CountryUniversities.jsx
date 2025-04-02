@@ -66,7 +66,7 @@ export default function CountryUniversities({ countrySlug }) {
                                         {uni.logo && (
                                             <img src={uni.logo} alt="University Logo" className={styles.universityLogo} />
                                         )}
-                                        <Link href={`/universities/${uni.slug}`} className={styles.universityName}>
+                                        <Link href={`/university/${uni.slug}`} className={styles.universityName}>
                                             {uni.name}
                                         </Link>
                                     </div>

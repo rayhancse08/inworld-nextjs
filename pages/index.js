@@ -1,11 +1,3 @@
-// import UniversityList from "../components/UniversityList";
-//
-// export default function Home() {
-//     return <UniversityList />;
-// }
-
-
-// pages/universities.js
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "../components/UniversityList.module.css";
@@ -21,44 +13,38 @@ export default function UniversityList({ universities = [] }) {
                         <div className={styles.header}>
                             <Image
                                 src={country?.flag || "/default-flag.png"}
-                                alt={country?.name + " Flag"}
+                                alt='Flag'
                                 className={styles.flag}
                                 width={30}
                                 height={30}
-                                priority
-                                quality={50}
+                                loading={"lazy"}
+
                             />
                             <h2 className={styles.title}>{country?.name || "Unknown Country"}</h2>
                         </div>
-                        <hr/>
-                        <table className={styles.table}>
-                            <tbody>
+                        <hr />
+                        <div className={styles.universityList}>
                             {(country?.universities || []).map((university, i) => (
-                                <tr
+                                <div
                                     key={i}
                                     className={styles.universityRow}
-                                    onClick={() =>
-                                        router.push(`/universities/${university?.slug}`)
-                                    }
+                                    onClick={() => router.push(`/university/${university?.slug}`)}
                                 >
-                                    <td>
-                                        <Image
-                                            src={university?.logo || "/default-logo.png"}
-                                            alt={university?.name || "University Logo"}
-                                            className={styles.logo}
-                                            width={30}
-                                            height={30}
-                                            quality={50}
-                                            priority={index < 2}
-                                        />
-                                        <span className={styles.universityName}>
-                                                {university?.name || "Unknown University"}
-                                            </span>
-                                    </td>
-                                </tr>
+                                    <Image
+                                        src={university?.logo || "/default-logo.png"}
+                                        alt="University Logo"
+                                        className={styles.logo}
+                                        width={30}
+                                        height={30}
+                                        loading={"lazy"}
+
+                                    />
+                                    <span className={styles.universityName}>
+                    {university?.name || "Unknown University"}
+                  </span>
+                                </div>
                             ))}
-                            </tbody>
-                        </table>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -66,6 +52,7 @@ export default function UniversityList({ universities = [] }) {
     );
 }
 
+// Fetch Data for Static Props (without ISR)
 export async function getStaticProps() {
     try {
         const res = await fetch("https://inworldstudentcampus.com/api/countries/");
@@ -75,7 +62,7 @@ export async function getStaticProps() {
             props: {
                 universities: Array.isArray(data) ? data : [],
             },
-        }; // No revalidate for static HTML export
+        };
     } catch (error) {
         console.error("Error fetching data:", error);
         return {
